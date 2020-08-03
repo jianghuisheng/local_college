@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,li{
+    list-style: none;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eee;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 1.5rem auto;
+    max-width: 667px;
+    font-size: 0.65rem;
+}
+
+img {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    margin: 0 .5rem;
+    vertical-align: middle;
+}
+
+.users{
+    background: #fff;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+.apply{
+    margin-top: .5rem;
+    background: #fff;
+    border-radius: .5rem;
+}
+
+.apply_top{
+    padding: 1rem;
+    text-align: center;
+    width: 14rem;
+    margin: 0 auto;
+}
+
+.titles{
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: .5rem;
+}
+
+.contents{
+    color:red;
+}
+
+.apply_content{
+    padding-left: 2.5rem;
+    padding-bottom:.5rem;
+}
+
+.apply_content li{
+    margin: 1.3rem 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.apply_content li span{
+    padding-right: .5rem;
+}
+
+.recommend{
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    max-width: 667px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.pay{
+    max-width: 667px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #eee;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.discount{
+   padding-left: 1.65rem;
+}
+
+.discount span:nth-of-type(2){
+    color:rgb(141, 138, 138);
+    margin-left: .25rem;
+}
+
+.pay_now{
+    background: rgba(255, 0, 0, 0.801);
+    font-size: 20px;
+    color: #fff;
+    padding: 12px 15px;
+}
+
+/* 弹出层layui */
+.layui-layer-btn0{
+    display: none !important;
+}
+
+.layui-layer-title{
+    display: none !important;
+}
+
+.layui-layer-content , .layer_wrapper{
+    width:100%;
+}
+
+.layer_content{
+    text-align: center !important;
+}
+
+.layui-layer{
+    width:80%;
+    max-width: 360px;
+    margin:0 auto;  
+}
+
+.layer_content{
+    padding:20px;
+    border-bottom: 1px solid #eee;
+}
+
+.layer_footer{
+    display:flex;
+    justify-content:center;
+    font-size: 21px !important;
+    padding: 3px 0;
+}
+
+

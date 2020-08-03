@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>学做聪明女人</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <script>
+        // 移动端多设备适配处理
+        (function (doc, win) {
+            // 所有html
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                // 设计稿的宽度
+                designWidth = 750,
+                calc = function () {
+                    // 整体宽度
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 适配pc端
+                    if (clientWidth > 677) {
+                        clientWidth = 677;
+                    }
+                    docEl.style.fontSize = 40 * (clientWidth / designWidth) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, calc, false);
+            doc.addEventListener('DOMContentLoaded', calc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/payout.css">
+    <script src='js/jquery.js'></script>
+    <script src="./layui/layui.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="users">
+            <img src="./img/tx.jpg" alt="" id="user_head"><span id="userName">将慧圣</span>
+        </div>
+
+        <div class="apply">
+            <div class="apply_top">
+                <p class="titles">填写真实报名信息</p>
+                <p class="contents">坚持全勤打卡<br>作为奖励,听书宝将退还全额押金!</p>
+            </div>
+            <ul class="apply_content">
+                <li class="pay_name"><span>姓名</span><input
+                        style="background: #f9f9f9;border: none;padding: 10px;border-radius: 4px;width: 10.5rem;"
+                        type="text" ; placeholder="请输入姓名" id='pay_name'></li>
+                <li class="pay_mobile"><span>手机</span><input
+                        style="background: #f9f9f9;border: none;padding: 10px;border-radius: 4px;width: 10.5rem;"
+                        type="number" placeholder="请输入手机号" id='pay_mobile'></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="recommend">
+        <span><img src="./img/check.png" alt="">倾力推荐</span>
+        <span><img src="./img/check.png" alt="">购买后7天内无忧退款</span>
+    </div>
+
+    <div class="pay">
+        <div class="discount">
+            <span>限时特价 ￥<span class="currentPrice">9.9</span></span>
+            <span style="text-decoration:line-through;">原价￥<span class="originPrice">99.9</span></span>
+        </div>
+        <div class="pay_now">
+            <p>立即报名</p>
+        </div>
+    </div>
+
+</body>
+<!-- 自定义js文件 -->
+<script src="./js/payout.js"></script>
+
+
+</html>

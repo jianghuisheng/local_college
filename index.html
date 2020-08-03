@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>学做聪明女人</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <script>
+        // 移动端多设备适配处理
+        (function (doc, win) {
+            // 所有html
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                // 设计稿的宽度
+                designWidth = 750,
+                calc = function () {
+                    // 整体宽度
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 适配pc端
+                    if (clientWidth > 677) {
+                        clientWidth = 677;
+                        $('.layui-layer-content').css('min-width', '477px')
+                    }
+                    docEl.style.fontSize = 40 * (clientWidth / designWidth) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, calc, false);
+            doc.addEventListener('DOMContentLoaded', calc, false);
+        })(document, window);
+    </script>
+
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src='js/jquery.js'></script>
+    <script src="./layui/layui.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 轮播图 -->
+        <div class="wrapper">
+            <div id="mooc">
+                <div id="moocBox">
+                    <ul class="con1">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 头部 -->
+        <div class="head_top">
+            <div class="p_cash">
+                <div style="font-size: .7rem;font-weight: bold;color:#616161">
+                    <p style="color:red;padding-left:15px;font-size: .75rem" class="currentPrice">9.9</p>
+                    押金<span class="textLine"><span style="color:#616161" class="pledgePrice">99</span></span>元
+                </div>
+            </div>
+            <img src="img/1.jpg" alt="">
+            <div class="totalUsers">1000</div>
+        </div>
+
+        <!-- tab切换导航 -->
+        <div style="background:#EAEAEA">
+            <div id="tab">
+                <span class="select">计划介绍</span>
+                <div style="background-color:#fff;height:2rem;width:1px">
+                    <b class="tab_line" style="display:inline-block;width: 1px;height:1.2rem;
+                    background: #ccc;margin:0.4rem 0"></b>
+                </div>
+                <span>查看书单</span>
+            </div>
+        </div>
+
+        <!-- 内容 -->
+        <ul id="con">
+            <!-- show显示内容 -->
+            <li class="class_show show">
+                <div><img src="img/2.jpg" alt=""></div>
+                <div><img src="img/3.jpg" alt=""></div>
+                <div><img src="img/4.jpg" alt=""></div>
+                <div><img src="img/5.jpg" alt=""></div>
+                <div><img src="img/6.jpg" alt=""></div>
+                <div><img src="img/7.jpg" alt=""></div>
+                <div><img src="img/8.jpg" alt=""></div>
+                <div><img src="img/9.jpg" alt=""></div>
+                <div><img src="img/10.jpg" alt=""></div>
+                <div><img src="img/11.jpg" alt=""></div>
+                <div><img src="img/12.jpg" alt=""></div>
+                <div style="margin-bottom: 80px;"><img src="img/13.jpg" alt=""></div>
+            </li>
+            <li class="book_show">
+                <div><img src="img/1-1.jpg" alt=""></div>
+                <div><img src="img/2-2.jpg" alt=""></div>
+                <div style="margin-bottom: 80px;"><img src="img/3-3.jpg" alt=""></div>
+            </li>
+        </ul>
+
+        <!-- 底部布局 -->
+        <div class="foot_bottom">
+            <!-- 课程播放器 -->
+            <div class="music_wrapper">
+                <audio source src="" controls id="musicBox" style="height: 20px;width:100%;display:none;"></audio>
+            </div>
+
+            <!-- 白条debug层 -->
+            <div class="deBug" style="background:#fff;height: 20px;width: 100%;display:none">
+
+            </div>
+
+            <!-- 底部按钮容器 -->
+            <div class="pay_wrapper">
+
+                <div class="listen">
+                    <a class="try_listen" style="cursor: pointer;" href="javascript:;">
+                        <span><img src="./img/Screenshot.jpg" alt=""></span>
+                        <span class="listen_status">试听</span>
+                    </diav>
+                    <a class="pause_listen" style="display:none;cursor: pointer;" href="javascript:;">
+                        <span><img src="./img/pause.jpg" alt=""></span>
+                        <span>暂停</span>
+                    </a>
+                </div>
+
+                <div class="tell">
+                    <div class="discount">
+                        <p style="text-decoration:line-through;">原价￥<span class="originPrice">99</span></p>
+                        <p>红包折扣￥<span class="discoutPrice">90</span></p>
+                    </div>
+                    <div class="pay">
+                        <p>仅需支付￥<span class="currentPrice">9.9</span></p>
+                        <h3 style="font-weight:800;">立即报名</h3>
+                    </div>
+                </div>
+
+                <div class="tell_now" style="display:none;color:rgb(252, 229, 229);font-size:22px">立即报名</div>
+            </div>
+
+        </div>
+
+
+        <!--内容弹出层时背景层DIV-->
+        <div class="black_overlay"></div>
+
+        <!--红包弹出层时背景层DIV-->
+        <div class="black_overlay2"></div>
+
+        <div class="packCoupon">
+            <ul style="position:relative">
+                <li class="times"><span id="minute">59</span>分<span id="second">59</span>秒</li>
+                <li class="red_packet"><img src="img/red_packet.gif" alt=""></li>
+                <p class="discountData discoutPrice">90</p>
+                <li class="coupon"><img src="img/coupon.gif" alt=""></li>
+            </ul>
+        </div>
+
+        <!-- 底部按钮容器 -->
+        <div class="pack_wrap">
+            <ul class="pric_total">
+                <li><span>原价￥</span> <span class="pric_1 originPrice">99.9</span></li>
+                <li><span>红包抵扣￥</span> <span class="pric_2 discoutPrice">90</span></li>
+                <li class="pric_0">仅需支付￥<span class="pric_3 currentPrice">9.9</span></li>
+            </ul>
+
+        </div>
+
+        <!-- 课程列表页面 -->
+        <div class="dialog">
+            <div class="dialog-inner">
+                <!-- 下拉按钮 -->
+                <span class="arrow_down"><i class="fa fa-angle-down"></i></span>
+                <div>
+                    <span class="catalog">目录</span><span class="details" style="font: weight 500;"></span>
+                </div>
+                <div class="data_wrapper" style="position: relative;">
+                    <ul id='lists'>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<!-- 自定义js文件 -->
+<script src="./js/index.js"></script>
+
+
+</html>

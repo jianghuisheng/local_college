@@ -1,0 +1,430 @@
+
+@color:#ec275e;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li{
+  list-style: none;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#EAEAEA;
+}
+
+.head_top{
+  text-align: center;
+  position: relative;
+  width: 100%;
+  background:#EAEAEA;
+  z-index: -1;
+}
+
+.p_cash{
+  position: absolute;
+  width: 100%;
+  right: 1%;
+  top: 64%;
+}
+
+.textLine{
+  text-decoration: line-through;
+  color:red;
+}
+
+.head_top img {
+  width: 18.75rem;
+}
+
+#tab {
+  width: 100%;
+  overflow: hidden;
+  max-width: 677px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tab span {
+  float: left;
+  height: 2rem;
+  line-height: 2rem;
+  width: 50%;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #000;
+  background: #fff;
+}
+
+/* tab选中状态样式 */
+#tab span.select {
+  border-bottom: 3px solid #ff2e65;
+}
+
+/* 固定tab到顶部 */
+.fixed_top{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  max-width: 677px;
+  transform: translate(-50%);
+}
+
+#con li {
+  display: none;
+  width: 100%;
+  background: #EAEAEA;
+  text-align: center;
+}
+
+#con li.show {
+  display: block;
+}
+
+#con li.class_show img,#con li.book_show img {
+  width: 18.75rem;
+}
+
+.foot_bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  max-width: 677px;
+  transform: translate(-50%);
+  z-index: 9999;
+}
+
+.foot_bottom2{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  max-width: 677px;
+  transform: translate(-50%);
+  z-index: 9999;
+  display: none;
+}
+
+/* 底部按钮样式布局 */
+.pay_wrapper{
+  display: flex;
+  flex-flow: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listen{
+  width: 35%;
+  height: 60px;
+  background:#fff;
+}
+
+.try_listen ,.pause_listen{
+  overflow: hidden;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.try_listen img,.pause_listen img{
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.try_listen span,.pause_listen span{
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block; 
+} 
+
+.tell,.tell_now{
+  width: 65%;
+  height: 60px;
+  background:@color;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 折扣和支付 */
+.discount{
+  color: #fff;
+  font-size: 15px;
+}
+
+.pay{
+  border-radius: 1rem;
+  background: #ffe399;
+  color: #ff2e65;
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 15px;
+} 
+
+/* 模态框 */
+.black_overlay,.black_overlay2{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+  max-width: 677px;
+  height: 100%;
+  background-color: black;
+  z-index:5555;
+  -moz-opacity: 0.8;
+  opacity:.80;
+  filter: alpha(opacity=80);
+}
+
+/* 红包优惠券 */
+.packCoupon{
+  position: fixed;
+  max-width: 677px;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+  display: block;
+}
+
+.red_packet{
+  display: none;
+}
+
+.coupon{
+   display: none;
+}
+
+.red_packet img,.coupon img{
+  width: 17rem;
+  height: 27rem;
+}
+
+.discountData{
+  color: #f75832;
+  position: absolute;
+  left: 27%;
+  top: 35%;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: none;
+}
+
+.times{
+  display:none;
+  position: fixed;
+  top: 13.9rem;
+  left: 9.5rem;
+  font-size: 13px;
+  color: red;
+}
+
+/* 红包优惠券界面底部布局 */
+.pack_wrap{
+  display: none;
+  width: 100%;
+  max-width: 677px;
+  position: fixed;
+  bottom:60px;
+  background: #fff;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99999;
+}
+
+.pack_wrap li{
+  max-width: 677px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding: 13.4px 10px;
+}
+
+.pric_1{
+  color: #aaa;
+}
+
+.pric_2{
+  color:#aaa;
+}
+
+.pric_0{
+  font-weight:600;
+}
+
+.pric_3{
+  color:@color;
+  font-weight:600;
+}
+
+/* 试听页面 */
+.dialog{
+  -webkit-overflow-scrolling: touch;
+  width: 18.75rem;
+  height: 23rem;
+  max-height: 730px;
+  background: #fff;
+  position: fixed;
+  bottom: 80px;
+  line-height: 2rem;
+  display: none;
+  z-index: 8888;
+  overflow: auto;
+  padding: 0 1.5rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.arrow_down{
+  margin-left: 46%;
+  font-size: 1.5rem;
+  color:#aaa;
+}
+
+.titles{
+  display: block;
+  font-size: .75rem;
+  margin-top: .5rem;
+  color: #000 !important;
+  font-weight: 800;
+}
+
+.dialog li{
+  color:#aaa;
+  font-size: 0.6rem;
+  border-bottom: 1px solid #eee;
+}
+
+.catalog{
+  font-size: 1.4rem;
+  border-left: 5px solid rgba(228, 11, 58, 0.932);
+  padding:0 .25rem;
+}
+
+/* 课程状态文字样式 */
+.audition{
+  padding-left: 5.2rem;
+  position: absolute;
+  right: 0.4rem;
+  z-index: 777;
+}
+
+/* 课程未解锁样式 */
+.lock{
+  padding-left: 6rem;
+  position: absolute;
+  right: 1rem;
+  z-index: 777;
+}
+
+.clicked{ 
+  color: red !important;
+}
+
+/* 向上轮播图 */
+.wrapper{
+  position: fixed;
+  bottom: 6rem;
+  right: 1rem;
+  left: 50%;
+  max-width: 280px;
+  transform: translate(-40%);
+}
+
+#mooc {
+  width: 12rem;
+  height: 1.2rem;   
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.438);
+  color:#fff;
+}
+
+#moocBot {
+  width: 12rem;
+  height: .55rem;
+  overflow: hidden;
+}
+
+#moocBox {
+  height: 1.2rem;
+  width: 16.75rem;
+  margin-left: 1.25rem;
+  overflow: hidden;
+}
+
+#mooc ul li {
+  height: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#mooc img{
+  border-radius:50%;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 .5rem 0 0;
+}
+
+.con1 li span{
+  display: inline-block;
+  width: 8rem;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+/* 弹出层layui */
+.layui-layer-btn0{
+  display: none !important;
+}
+
+.layui-layer-title{
+  display: none !important;
+}
+
+.layui-layer-content , .layer_wrapper{
+  width:100%;
+}
+
+.layer_content{
+  text-align: center !important;
+}
+
+.layui-layer{
+  width:80%;
+  max-width: 360px;
+  margin:0 auto;  
+}
+
+.layer_content{
+  padding:20px;
+  border-bottom: 1px solid #eee;
+}
+
+.layer_footer{
+  display:flex;
+  justify-content:center;
+  font-size: 15px !important;
+}
